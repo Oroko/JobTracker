@@ -1,10 +1,40 @@
 
-<h1>Jobs</h1> 
+<section class="section"> 
+  <div class="container"> 
+    <div class="column">
 
-<ul>
-<% @jobs.each do |job|%>
-  <li><%= link_to job.title, job %></li> 
-<%end%>
-</ul>
+      <% @jobs.each do |job|%>
+        <div class="box">
+          <article class="media">
+            <div class="media-content"> 
+              <div class="content">
+                <strong><p><%= job.title %></p></strong> <br />
+              </div>
+            </div>
+            <nav class="level">
+              <div class="level-left is-mobile">
+                <%= link_to job, class: "level-item" do %> 
+                  <span class="icon"><i class="fa fa-link" aria-hidden= "true"></i></span>
+                <% end %>
+                <%= link_to edit_job_path(job), class: "level-item" do %>
+                    <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                  <%end%>
+                  <%= link_to job, method: :delete, data: { confirm: "Are you sure you want to delete this tweet?"} do %>
+                    <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                  <%end%>
+              </div>
+              
+            </nav>
+          </article>
+        </div>
+      <%end%>
+     <%= link_to 'New Job', new_job_path %>
+    </div>
+     
+  </div>
+  
+</section>
 
-<%= link_to 'New Job', new_job_path %>
+
+
+

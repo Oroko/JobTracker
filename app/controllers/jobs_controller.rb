@@ -17,7 +17,8 @@ class JobsController < ApplicationController
     @job = Job.create(job_params)
 
     if @job.save!
-      redirect_to job_path(@job)
+      flash[:notice] = 'Job was successfully created. '
+      redirect_to root_path
     else
       render :new
     end
