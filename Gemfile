@@ -32,7 +32,7 @@ gem 'hirb', '~> 0.7.3'
 gem 'simple_form', '~> 5.1' 
 gem 'bulma-rails', '~> 0.9.1' 
 gem 'activerecord-reset-pk-sequence', '~> 0.2.1'
-
+gem 'devise', '~> 4.7', '>= 4.7.3'
 
 
 group :development, :test do
