@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class JobsController < ApplicationController
+  before_action :set_job, only: %i[show edit update destroy]
   def index
     @jobs = Job.all
   end
@@ -9,9 +10,7 @@ class JobsController < ApplicationController
     @job = Job.new
   end
 
-  def show
-    @job = Job.find(params[:id])
-  end
+  def show; end
 
   def create
     @job = Job.create(job_params)
@@ -24,13 +23,9 @@ class JobsController < ApplicationController
     end
   end
 
-  def edit
-    @job = Job.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @job = Job.find(params[:id])
-
     if @job.update(job_params)
       redirect_to root_path
     else
@@ -39,7 +34,6 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    @job = Job.find(params[:id])
     @job.destroy
 
     redirect_to root_path
@@ -49,5 +43,9 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit(:title, :url, :description)
+  end
+
+  def set_job
+    @job = Job.find(params[:id])
   end
 end
