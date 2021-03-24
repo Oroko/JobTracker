@@ -36,7 +36,7 @@ class JobsController < ApplicationController
 
   def destroy
     @job.destroy
-
+    flash[:notice] = 'Job was successfully destroyed. '
     redirect_to root_path
   end
 

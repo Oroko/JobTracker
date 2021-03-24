@@ -11,6 +11,7 @@
                 <strong><p><%= job.title %></p></strong> <br />
               </div>
             </div>
+            <% if user_signed_in?%>
             <nav class="level">
               <div class="level-left is-mobile">
                 <%= link_to job, class: "level-item" do %> 
@@ -25,6 +26,7 @@
               </div>
               
             </nav>
+            <% end %>
           </article>
         </div>
       <%end%>
