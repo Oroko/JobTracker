@@ -33,6 +33,9 @@ gem 'simple_form', '~> 5.1'
 gem 'bulma-rails', '~> 0.9.1' 
 gem 'activerecord-reset-pk-sequence', '~> 0.2.1'
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'omniauth', '~> 2.0', '>= 2.0.3'
+gem 'omniauth-github', '~> 2.0'
+gem 'omniauth-google-oauth2', '~> 1.0'
 
 
 group :development, :test do
