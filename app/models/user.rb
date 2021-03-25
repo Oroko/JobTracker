@@ -3,7 +3,10 @@
 class User < ApplicationRecord 
 
 
-  has_many 
+  has_many :applications
+  has_many :applied_jobs, through: :applications, source: :job
+
+  has_many :jobs #that they have created
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
