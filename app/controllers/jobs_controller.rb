@@ -2,19 +2,22 @@
 
 class JobsController < ApplicationController
   before_action :set_job, only: %i[show edit update destroy]
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :authenticate_user!
+
   def index
-    @jobs = Job.all
+    @jobs = current_user.jobs
   end
 
   def new
     @job = Job.new
+    @job.build_company
+    
   end
 
   def show; end
 
   def create
-    @job = Job.create(job_params)
+    @job = current_user.jobs.build(job_params)
 
     if @job.save!
       flash[:notice] = 'Job was successfully created. '
@@ -43,7 +46,8 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :url, :description)
+    params.require(:job).permit(:title, :url, :description, :company_id,
+                                company_attributes: [:name])
   end
 
   def set_job

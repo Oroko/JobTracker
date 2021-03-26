@@ -40,6 +40,9 @@ gem 'omniauth-github', '~> 2.0'
 # gem 'omniauth-google-oauth2', '~> 1.0'
 gem 'figaro', '~> 1.2'
 gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-facebook' 
+gem 'omniauth-google-oauth2'
+gem 'activerecord-session_store'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

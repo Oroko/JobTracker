@@ -60,6 +60,12 @@ GEM
       activemodel (= 6.1.3)
       activesupport (= 6.1.3)
     activerecord-reset-pk-sequence (0.2.1)
+    activerecord-session_store (2.0.0)
+      actionpack (>= 5.2.4.1)
+      activerecord (>= 5.2.4.1)
+      multi_json (~> 1.11, >= 1.11.2)
+      rack (>= 2.0.8, < 3)
+      railties (>= 5.2.4.1)
     activestorage (6.1.3)
       actionpack (= 6.1.3)
       activejob (= 6.1.3)
@@ -162,7 +168,14 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
       rack-protection
+    omniauth-facebook (8.0.0)
+      omniauth-oauth2 (~> 1.2)
     omniauth-github (2.0.0)
+      omniauth (~> 2.0)
+      omniauth-oauth2 (~> 1.7.1)
+    omniauth-google-oauth2 (1.0.0)
+      jwt (>= 2.0)
+      oauth2 (~> 1.1)
       omniauth (~> 2.0)
       omniauth-oauth2 (~> 1.7.1)
     omniauth-oauth2 (1.7.1)
@@ -295,6 +308,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-reset-pk-sequence (~> 0.2.1)
+  activerecord-session_store
   better_errors (~> 2.9, >= 2.9.1)
   bootsnap (>= 1.4.4)
   bulma-rails (~> 0.9.1)
@@ -305,7 +319,9 @@ DEPENDENCIES
   hirb (~> 0.7.3)
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  omniauth-facebook
   omniauth-github (~> 2.0)
+  omniauth-google-oauth2
   omniauth-rails_csrf_protection
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
