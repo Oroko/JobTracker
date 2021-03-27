@@ -271,8 +271,12 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
+  config.omniauth :github, Rails.application.credentials.dig(:github, :github_client_id),
+                  Rails.application.credentials.dig(:github, :github_client_secret), scope: 'user,public_repo'
+  config.omniauth :facebook, Rails.application.credentials.dig(:facebook, :facebook_client_id),
+                  Rails.application.credentials.dig(:facebook, :facebook_client_secret), scope: 'public_profile,email'
+  config.omniauth :google_oauth2, Rails.application.credentials.dig(:google, :google_client_id),
+                  Rails.application.credentials.dig(:google, :google_client_secret), scope: 'userinfo.email, userinfo.profile'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
@@ -309,5 +313,5 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
 
-  config.omniauth :github, ENV['GITHUB_ID'], ENV['GITHUB_SECRET'], scope: 'user,public_repo'
+  # config.omniauth :github, ENV['GITHUB_ID'], ENV['GITHUB_SECRET'], scope: 'user,public_repo'
 end
