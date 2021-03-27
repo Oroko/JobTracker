@@ -35,10 +35,10 @@
   </div>
   <div class="field">
     <div class="control">
-      <%= f.association :company,
+      <%= f.collection_select :company_id,  Company.all, :id, :name,
         input_html: { class: "input" },
         wrapper: false,
-        label_html: { class: "label" }  %>
+        label_html: { class: "label" }%>
     </div>
   </div>
   <div class="field">

@@ -18,7 +18,7 @@ class JobsController < ApplicationController
 
   def create
     @job = current_user.jobs.build(job_params)
-
+    
     if @job.save!
       flash[:notice] = 'Job was successfully created. '
       redirect_to root_path
