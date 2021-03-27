@@ -1,0 +1,37 @@
+<section class="section"> 
+  <div class="container"> 
+    <div class="column">
+    
+      <% @companies.each do |company|%>
+        <div class="box">
+          <article class="media">
+            <div class="media-content"> 
+              <div class="content">
+                <strong><p><%= company.name %></p></strong> <br />
+              </div>
+            </div>
+            <% if user_signed_in?%>
+            <nav class="level">
+              <div class="level-left is-mobile">
+                <%= link_to company, class: "level-item" do %> 
+                  <span class="icon"><i class="fa fa-link" aria-hidden= "true"></i></span>
+                <% end %>
+                <%= link_to edit_company_path(company), class: "level-item" do %>
+                    <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                  <%end%>
+                  <%= link_to company, method: :delete, data: { confirm: "Are you sure you want to delete this tweet?"} do %>
+                    <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                  <%end%>
+              </div>
+              
+            </nav>
+            <% end %>
+          </article>
+        </div>
+      <%end%>
+     <%= link_to 'New Job', new_job_path %>
+    </div>
+     
+  </div>
+  
+</section>
