@@ -14,6 +14,9 @@
             <% if user_signed_in?%>
             <nav class="level">
               <div class="level-left is-mobile">
+              <%= link_to "Apply", new_job_application_path(job.id),  class: "level-item"  %> 
+                  
+                
                 <%= link_to job, class: "level-item" do %> 
                   <span class="icon"><i class="fa fa-link" aria-hidden= "true"></i></span>
                 <% end %>
@@ -30,7 +33,7 @@
           </article>
         </div>
       <%end%>
-     <%= link_to 'New Job', new_job_path %>
+    
     </div>
      
   </div>

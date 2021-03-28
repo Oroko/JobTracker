@@ -1,0 +1,19 @@
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+    <div class="column is-4">
+      <h2 class="title is-2">All the Applications </h2>
+        <ul class="block-list is-small is-outlined is-success" >
+         <% @applications.each do |application| %>
+            <li><%= application.date_of_application %></li>
+            <li><%= application.notes %></li>
+         <%end%>
+        </ul>
+     
+
+      
+
+    </div>
+  </div>
+</div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_035122) do
+ActiveRecord::Schema.define(version: 2021_03_28_011839) do
 
   create_table "applications", force: :cascade do |t|
     t.date "date_of_application"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_035122) do
     t.integer "job_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "notes"
     t.index ["job_id"], name: "index_applications_on_job_id"
     t.index ["user_id"], name: "index_applications_on_user_id"
   end

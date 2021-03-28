@@ -2,7 +2,9 @@
   <div class="container">
     <div class="columns is-centered">
     <div class="column is-4">
-      <h2 class="title is-2">New Job</h2>
+      <h2 class="title is-2">New Job</h2> 
+
+      <%= render partial: 'layouts/errors', locals: { object: @job } %>
       <%= render 'form' %>
 
     </div>
