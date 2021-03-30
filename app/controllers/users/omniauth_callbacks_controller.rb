@@ -2,14 +2,14 @@
 
     def github
        @user = User.from_omniauth(request.env["omniauth.auth"])
-       byebug
+       
        if @user.id? && @user.persisted?
          sign_in_and_redirect @user, event: :authentication #this will throw if @user is not activated
          set_flash_message(:notice, :success, kind: "GitHub") if is_navigational_format?
        elsif @user.id?
         
         flash[:notice] = 'Email is already in use'
-        byebug
+        
         redirect_to new_user_session_url
 
        else
@@ -22,7 +22,7 @@
 
     def facebook
        @user = User.from_omniauth(request.env["omniauth.auth"])
-       byebug
+       
        if @user.id && @user.persisted?
          sign_in_and_redirect @user, event: :authentication #this will throw if @user is not activated
          set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
@@ -30,7 +30,7 @@
        elsif @user.id?
         
         flash[:notice] = 'Email is already in use'
-        byebug
+        
         redirect_to new_user_session_url
 
        else
@@ -42,7 +42,7 @@
     def google_oauth2
        @user = User.from_omniauth(request.env["omniauth.auth"])
 
-        byebug
+        
        if @user.id && @user.persisted?
          sign_in_and_redirect @user, event: :authentication #this will throw if @user is not activated
          set_flash_message(:notice, :success, kind: "Google") if is_navigational_format? 
@@ -50,7 +50,7 @@
        elsif @user.id?
         
         flash[:notice] = 'Email is already in use'
-        byebug
+        
         redirect_to new_user_session_url
 
        else

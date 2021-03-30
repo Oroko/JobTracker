@@ -1,0 +1,46 @@
+
+
+
+
+
+
+
+
+<%= form_tag @form_filter_path do %>
+
+	<div class="container">
+		<div class="columns ">
+			<div class="column is-4">
+			  <div class="field">
+			    <div class="control">
+			    	
+			       
+			       <%= label_tag(:title, "title:") %>
+   					<%= text_field_tag(:title) %>
+			    </div>
+			  </div>
+			</div>
+		
+			<div class="column is-4">
+			  <div class="field">
+			    <div class="control">
+			     	<%= label_tag(:description, "description:") %>
+   					<%= text_field_tag(:description) %>
+			    </div>
+			  </div>
+			</div>
+			<div class="column is-4">
+			  <div class="field">
+			    <div class="control">
+			    	<br />
+			         <%= submit_tag("Search") %>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	  
+	
+<% end %>
+	
+ 

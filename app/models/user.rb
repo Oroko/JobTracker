@@ -16,7 +16,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[github facebook google_oauth2]
 
   def self.from_omniauth(auth)
-    byebug
+  
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       
       user.email = auth.info.email
