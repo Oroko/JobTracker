@@ -50,6 +50,9 @@
                   <%= link_to 'My Jobs', jobs_my_jobs_applications_path, class: 'button is-info' %>
                 </p>
                 <p class="control">
+                  <%= link_to 'My Applications', applications_path, class: 'button is-info' %>
+                </p>
+                <p class="control">
                   <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'button is-info' %>
                 </p>
               <% else %>
